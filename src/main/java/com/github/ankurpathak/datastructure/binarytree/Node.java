@@ -1,6 +1,6 @@
 package com.github.ankurpathak.datastructure.binarytree;
 
-public class Node<T extends Comparable> {
+public class Node<T extends Comparable<T>> {
 
     private Node<T> right, left;
 
@@ -32,5 +32,12 @@ public class Node<T extends Comparable> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data=" + data +
+                '}';
     }
 }

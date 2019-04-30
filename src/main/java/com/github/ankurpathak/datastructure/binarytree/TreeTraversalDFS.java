@@ -1,8 +1,5 @@
 package com.github.ankurpathak.datastructure.binarytree;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 public class TreeTraversalDFS {
     public static void main(String[] args) {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
@@ -18,12 +15,18 @@ public class TreeTraversalDFS {
         binarySearchTree.preOrder();
 
 
-        BinarySearchTree<Integer> binarySearchTree1 = new BinarySearchTree<>();
-        binarySearchTree1.addAll(Arrays.asList(10, 15, 5, 7, 19, 20, -1, 21,21));
-        binarySearchTree1.preOrder();
-
+        binarySearchTree = new BinarySearchTree<>();
+        binarySearchTree.add(10, true);
+        binarySearchTree.add(15, true);
+        binarySearchTree.add(5, true);
+        binarySearchTree.add(7,  true);
+        binarySearchTree.add(19, true);
+        binarySearchTree.add(20, true);
+        binarySearchTree.add(-1, true);
+        binarySearchTree.add(21, true);
+        binarySearchTree.add(21, true);
+        binarySearchTree.preOrder();
     }
-
 }
 
 

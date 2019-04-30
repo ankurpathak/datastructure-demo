@@ -23,16 +23,28 @@ class BinarySearchTree<T extends Comparable<T>> {
     }
 
 
-    public void addAll(Collection<T> datas){
+    public void addAll(Collection<T> datas, boolean iterative){
         if(datas != null){
-            datas.forEach(this::add);
+            if(iterative)
+                datas.forEach(x -> this.add(x, true));
+            else datas.forEach(this::add);
         }
     }
 
+    public void addAll(Collection<T> datas){
+        addAll(datas, false);
+    }
+
+
+    public void add(T data, boolean iterative) {
+        if(iterative)
+            root = iterativeAddNode(root, data);
+        else
+            root = recAddNode(root, data);
+    }
 
     public void add(T data) {
-        root = recAddNode(root, data);
-        //root = iterativeAddNode(root, data);
+        add(data, false);
     }
 
 
